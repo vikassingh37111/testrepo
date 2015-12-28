@@ -1,39 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Flot Examples: Adding Annotations</title>
 	<link href="style/main.css" rel="stylesheet" type="text/css">
-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
-	<!--script language="javascript" type="text/javascript" src="../../jquery.js"></script-->
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-	<!--script language="javascript" type="text/javascript" src="../../jquery.flot.js"></script-->
 	<script type="text/javascript">
 
-	$(document).ready(function(){
-	});
+	  $(document).ready(function(){
+	    $('.add-a-card').on("click", function(){
+	      $(this).parent().find(".temp-card-adder").show();
+	    });
+	    
+	    $("body").on("click",'.add-card-btn' ,function(){  
+	      var newCardTitle =$(this).parent().find('.temp-card').val();
+	      $(this).parent().parent().find('.card-list').append('<div class="card"><div class="card-title">' +  newCardTitle  + '</div></div>');
+	      $(this).parent().hide();
+	      console.log();
+	    });
+
+	    $('.add-a-list').on("click", function(){  
+	      $(this).hide();
+	      $('.temp-list-adder').css("display", "inline-block");
+	    });  
+
+	    $('.save-list-btn').on("click", function(){  
+	      var newListTitle =$(this).parent().find('.temp-list').val();
+	      $('.dashboard').prepend(
+	        '<div class="list">'+
+	          '<div class="list-heading">' + newListTitle  + '</div>'+
+	          '<div class="card-list"></div>'+
+	          '<div class="add-a-card">'+
+	            '<a href="#">Add a card...</a>'+
+	          '</div>'+
+	          '<div class="temp-card-adder">'+
+	            '<textarea class="temp-card" type="text" value="Write Card Title"></textarea>'+
+	            '<input class="add-card-btn bttn" type="button" value="Add"></input>'+
+	            '<span class="remove-card remove">x</span>'+
+	          '</div>'+
+	        '</div>');
+	        $('.temp-list-adder').hide();
+	        $('.add-a-list').css("display", "inline-block");
+	    });
+	    $('.remove-list').on("click", function(){  
+	        $('.temp-list-adder').hide();
+	        $('.add-a-list').css("display", "inline-block");
+	    });
+	  });
 
 	</script>
 </head>
 <body>
 
-	<div id="header">
-		<h2>Adding Annotations</h2>
-	</div>
+<div class="dashboard">
+  <div class="list">
+    <div class="list-heading">LIST heading</div>
+    <div class="card-list">
+      <div class="card">
+        <div class="card-title">card 1</div>
+      </div>
+      <div class="card">
+        <div class="card-title">card 2</div>
+      </div>
+    </div>
+    <div class="add-a-card">
+      <a href="#">Add a card...</a>
+    </div>
+    <div class="temp-card-adder">
+      <textarea class="temp-card" type="text" value="Write Card Title"></textarea>
+      <input class="add-card-btn bttn" type="button" value="Add"></input>
+      <span class="remove-card remove">x</span>
+    </div>
+  </div>
+  <div class="list">
+    <div class="list-heading">LIST heading</div>
+    <div class="card-list">
+      <div class="card">
+        <div class="card-title">XYZ</div>
+      </div>
+      <div class="card">
+        <div class="card-title">ABC</div>
+      </div>
+    </div>
+    <div class="add-a-card">
+      <a href="#">Add a card...</a>
+    </div>
+    <div class="temp-card-adder">
+      <textarea class="temp-card" type="text" value="Write Card Title"></textarea>
+      <input class="add-card-btn bttn" type="button" value="Add"></input>
+      <span class="remove-card remove">x</span>
+    </div>
+  </div>
+  <input class="add-a-list" type="button" value="Add a list..."></input>
+  <div class="temp-list-adder">
+    <textarea class="temp-list" type="text" value="Add a list..."></textarea>
+    <input class="save-list-btn bttn" type="button" value="Save"></input>
+    <span class="remove-list remove">x</span>
+  </div>
+</div>
 
-	<div id="content">
-
-		<div class="demo-container">
-			<div id="placeholder" class="demo-placeholder"></div>
-		</div>
-
-		<p>Flot has support for simple background decorations such as lines and rectangles. They can be useful for marking up certain areas. You can easily add any HTML you need with standard DOM manipulation, e.g. for labels. For drawing custom shapes there is also direct access to the canvas.</p>
-
-	</div>
-
-	<div id="footer">
-		Copyright &copy; 2007 - 2014 IOLA and Ole Laursen
-	</div>
 
 </body>
 </html>

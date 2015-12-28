@@ -1,4 +1,104 @@
-#header
-{
-	color: rgb(10,255,10);
-}
+*{
+    font-size:13px;
+  }
+  a:hover
+  {
+    color: #908C8C;
+    background: transparent;
+  }
+  ul
+  {
+    list-style: none;
+  }
+  li
+  {
+    display: inline;
+  }
+  .random
+  {
+    height:200px;
+  }
+  body
+  {
+    background: #0079BF;
+  }
+  .list
+  {
+    width: 20%;
+    padding:10px;
+    background: #E2E4E6;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  .card
+  {
+    padding: 4px;
+    background: #FFF;
+    width:100%;
+    padding: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .list-heading
+  {
+    font-weight: 900;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    padding: 0px 0px 10px;
+  }
+  .temp-card-adder
+  {
+    display:none;
+  }
+  .temp-card
+  {
+    width:100%;
+    padding:4px;
+    border-radius:3px;
+    min-height:100px;
+  }
+  .add-a-card
+  {
+    color: #908C8C;
+    margin: 10px 0px;
+  }
+  .bttn
+  {
+    padding: 5px 10px;
+    color: #FFF;
+    background: #60BA4D;
+    border-radius: 3px;
+    border: none;
+  }
+  .bttn:hover
+  {
+    background: #407E32;
+  }
+  .remove
+  {
+    font-size:30px;
+    color: #4D4D5F;
+  }
+  .add-a-list
+  {
+    width:20%;
+    background: rgba(0, 0, 0, 0.10);
+    margin-bottom:10px;
+    border: 2px solid rgba(0, 0, 0, 0.17);
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  .temp-list-adder
+  {
+    width: 20%;
+    background: rgb(226, 228, 230);
+    padding: 10px;
+    display:none;
+    //display: inline-block;
+  }
+  .temp-list
+  {
+    width: 100%;
+    min-height:30px;
+    margin-bottom: 5px;
+  }
